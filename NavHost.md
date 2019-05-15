@@ -12,3 +12,8 @@ app:navGraph="@navigation/mobile_navigation"
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.main_nav_host_fragment).navigateUp(appBarConfiguration)
     }
+    
+        val pendingIntent = NavDeepLinkBuilder(context)
+                .setGraph(R.navigation.mobile_navigation)
+                .setDestination(R.id.fragment_house_detail_dest)
+                .createPendingIntent()

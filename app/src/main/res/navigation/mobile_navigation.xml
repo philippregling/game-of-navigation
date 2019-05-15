@@ -13,7 +13,7 @@
 
         <action
             android:id="@+id/to_house_detail_dest"
-            app:destination="@id/fragment_house_detail" />
+            app:destination="@id/fragment_house_detail_dest" />
 
 
         <action
@@ -23,7 +23,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/fragment_house_detail"
+        android:id="@+id/fragment_house_detail_dest"
         android:name="com.mobivention.gon.features.main.houses.detail.HouseDetailFragment"
         android:label="HouseDetailFragment"
         tools:layout="@layout/fragment_house_detail">
@@ -43,7 +43,19 @@
         android:id="@+id/fragment_person_dest"
         android:name="com.mobivention.gon.features.main.person.PersonFragment"
         android:label="PersonFragment"
-        tools:layout="@layout/fragment_person" />
+        tools:layout="@layout/fragment_person">
+
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="http://www.example.nav/{house_name}/{person_name}" />
+        <argument
+            android:name="house_name"
+            app:argType="string" />
+        <argument
+            android:name="person_name"
+            app:argType="string" />
+    </fragment>
 
 
     <fragment
