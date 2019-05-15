@@ -1,4 +1,4 @@
-package com.mobivention.myapplication.model
+package com.mobivention.gon.model
 
 import androidx.annotation.DrawableRes
 

@@ -1,25 +1,23 @@
-package com.mobivention.myapplication
+package com.mobivention.gon.features.main
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
-import android.widget.TextView
+import com.mobivention.gon.extensions.replaceFragment
+import com.mobivention.gon.features.BaseActivity
+import com.mobivention.gon.features.main.houses.HousesFragment
+import com.mobivention.gon.features.main.more.MoreFragment
+import com.mobivention.myapplication.R
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
-    private lateinit var textMessage: TextView
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_home -> {
-                textMessage.setText(R.string.title_home)
+            R.id.navigation_houses -> {
+                replaceFragment(HousesFragment())
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
-                textMessage.setText(R.string.title_dashboard)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_notifications -> {
-                textMessage.setText(R.string.title_notifications)
+            R.id.navigation_more -> {
+                replaceFragment(MoreFragment())
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -30,8 +28,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-
-        textMessage = findViewById(R.id.message)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        navView.selectedItemId = R.id.navigation_houses
     }
+
+
 }
