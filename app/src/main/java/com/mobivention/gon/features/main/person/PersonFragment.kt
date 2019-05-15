@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.mobivention.gon.features.BaseFragment
 import com.mobivention.gon.features.main.HouseRepository
+import com.mobivention.gon.utility.NotificationUtil
 import com.mobivention.myapplication.R
 import kotlinx.android.synthetic.main.fragment_person.*
 
@@ -28,6 +29,7 @@ class PersonFragment : BaseFragment() {
             person_given_name?.text = it.givenName
             person_surname?.text = it.surname
         }
+        context?.let { NotificationUtil.sendNotification(it) }
     }
 
 }
