@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mobivention.gon.extensions.replaceFragmentAddToBackstack
 import com.mobivention.gon.features.BaseFragment
 import com.mobivention.gon.features.main.HouseRepository
-import com.mobivention.gon.features.main.person.PersonFragment
 import com.mobivention.gon.model.Person
 import com.mobivention.myapplication.R
 import kotlinx.android.synthetic.main.fragment_house_detail.*
@@ -48,7 +46,7 @@ class HouseDetailFragment : BaseFragment(),
     }
 
     override fun onPersonClicked(person: Person) {
-        (activity as? AppCompatActivity)?.replaceFragmentAddToBackstack(PersonFragment())
+        findNavController().navigate(R.id.to_person_dest)
     }
 
 }

@@ -6,18 +6,18 @@ import com.mobivention.gon.features.BaseFragment
 import com.mobivention.myapplication.R
 
 fun AppCompatActivity.replaceFragment(fragment: BaseFragment) {
-    supportFragmentManager
-        .beginTransaction()
-        .replace(R.id.fragment_container, fragment)
-        .commit()
+//    supportFragmentManager
+//        .beginTransaction()
+//        .replace(R.id.fragment_container, fragment)
+//        .commit()
 }
 
 fun AppCompatActivity.replaceFragmentAddToBackstack(fragment: BaseFragment) {
-    supportFragmentManager
-        .beginTransaction()
-        .replace(R.id.fragment_container, fragment)
-        .addToBackStack(null)
-        .commit()
+//    supportFragmentManager
+//        .beginTransaction()
+//        .replace(R.id.fragment_container, fragment)
+//        .addToBackStack(null)
+//        .commit()
 }
 
 fun AppCompatActivity.setToolbar(title: String, showBack: Boolean) {

@@ -2,15 +2,12 @@ package com.mobivention.gon.features.main.houses
 
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mobivention.gon.extensions.replaceFragmentAddToBackstack
 import com.mobivention.gon.features.BaseFragment
 import com.mobivention.gon.features.main.HouseRepository
-import com.mobivention.gon.features.main.houses.detail.HouseDetailFragment
 import com.mobivention.gon.model.House
-import com.mobivention.gon.utility.IntentUtil
 import com.mobivention.myapplication.R
 import kotlinx.android.synthetic.main.fragment_houses.*
 
@@ -52,19 +49,7 @@ class HousesFragment : BaseFragment(),
 
 
     override fun onHouseClicked(house: House) {
-        (activity as? AppCompatActivity)?.replaceFragmentAddToBackstack(HouseDetailFragment())
+        findNavController().navigate(R.id.to_house_detail_dest)
     }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return if (item?.itemId == R.id.settings) {
-            activity?.let {
-                IntentUtil.openSettings(it)
-            }
-            true
-        } else {
-            super.onOptionsItemSelected(item)
-        }
-    }
-
 
 }

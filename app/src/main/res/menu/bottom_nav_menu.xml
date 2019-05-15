@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_houses"
+        android:id="@+id/fragment_houses_dest"
             android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/houses" />
 
     <item
-        android:id="@+id/navigation_more"
+        android:id="@+id/fragment_more_dest"
         android:icon="@drawable/ic_more_horiz_black_24dp"
         android:title="@string/more" />
 

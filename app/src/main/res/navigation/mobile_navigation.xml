@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/fragment_houses_dest">
+
+    <fragment
+        android:id="@+id/fragment_houses_dest"
+        android:name="com.mobivention.gon.features.main.houses.HousesFragment"
+        android:label="HousesFragment"
+        tools:layout="@layout/fragment_houses">
+
+        <action
+            android:id="@+id/to_house_detail_dest"
+            app:destination="@id/fragment_house_detail" />
+
+        <action
+            android:id="@+id/to_settings_navigation"
+            app:destination="@id/settings_dest" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_house_detail"
+        android:name="com.mobivention.gon.features.main.houses.detail.HouseDetailFragment"
+        android:label="HouseDetailFragment"
+        tools:layout="@layout/fragment_house_detail">
+
+        <action
+            android:id="@+id/to_person_dest"
+            app:destination="@id/fragment_person_dest" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_person_dest"
+        android:name="com.mobivention.gon.features.main.person.PersonFragment"
+        android:label="PersonFragment"
+        tools:layout="@layout/fragment_person" />
+
+
+    <fragment
+        android:id="@+id/fragment_more_dest"
+        android:name="com.mobivention.gon.features.main.more.MoreFragment"
+        android:label="MoreFragment"
+        tools:layout="@layout/fragment_more" />
+
+    <activity
+        android:id="@+id/settings_dest"
+        android:name="com.mobivention.gon.features.settings.SettingsActivity"
+        android:label="SettingsActivity" />
+
+
+</navigation>

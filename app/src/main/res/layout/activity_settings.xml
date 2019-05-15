@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/darker_gray"
     android:orientation="vertical">
 
@@ -13,11 +14,13 @@
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
 
-    <LinearLayout
-        android:id="@+id/fragment_container"
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical" />
+        android:id="@+id/settings_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/settings_navigation" />
 
 </LinearLayout>

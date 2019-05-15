@@ -5,4 +5,6 @@
     <string name="house_settings">House Settings</string>
     <string name="more_screen_text">There should be more here but there is not.</string>
     <string name="house_x">House %1$s</string>
+    <string name="dialog_fragment_text">This is a really long text</string>
+    <string name="open_license">Open License</string>
 </resources>
