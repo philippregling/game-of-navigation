@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mobivention.gon.features.BaseFragment
@@ -24,13 +25,15 @@ class HouseDetailFragment : BaseFragment(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setToolbar("Lannister", true)
-        initHouseDetail()
-        initRecyclerView()
+        val safeArgs: HouseDetailFragmentArgs by navArgs()
+        val houseName = safeArgs.houseName ?: ""
+        setToolbar(houseName, true)
+        initHouseDetail(houseName)
+        initRecyclerView(houseName)
     }
 
-    private fun initHouseDetail() {
-        val house = HouseRepository.getHouseForName("Lannister")
+    private fun initHouseDetail(houseName: String) {
+        val house = HouseRepository.getHouseForName(houseName)
         house?.let {
             house_detail_picture?.setImageResource(it.imageRes)
             house_detail_name?.text = it.name
@@ -38,11 +41,11 @@ class HouseDetailFragment : BaseFragment(),
         }
     }
 
-    private fun initRecyclerView() {
+    private fun initRecyclerView(houseName: String) {
         house_detail_recycler?.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         house_detail_recycler?.setHasFixedSize(true)
         house_detail_recycler?.adapter = adapter
-        adapter.setHouseMembers(HouseRepository.getPeopleForHouse("Lannister"))
+        adapter.setHouseMembers(HouseRepository.getPeopleForHouse(houseName))
     }
 
     override fun onPersonClicked(person: Person) {

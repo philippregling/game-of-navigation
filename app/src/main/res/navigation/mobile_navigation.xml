@@ -15,6 +15,7 @@
             android:id="@+id/to_house_detail_dest"
             app:destination="@id/fragment_house_detail" />
 
+
         <action
             android:id="@+id/to_settings_navigation"
             app:destination="@id/settings_dest" />
@@ -26,6 +27,11 @@
         android:name="com.mobivention.gon.features.main.houses.detail.HouseDetailFragment"
         android:label="HouseDetailFragment"
         tools:layout="@layout/fragment_house_detail">
+
+        <argument
+            android:name="houseName"
+            app:argType="string"
+            app:nullable="true" />
 
         <action
             android:id="@+id/to_person_dest"

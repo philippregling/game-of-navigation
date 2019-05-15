@@ -49,7 +49,8 @@ class HousesFragment : BaseFragment(),
 
 
     override fun onHouseClicked(house: House) {
-        findNavController().navigate(R.id.to_house_detail_dest)
+        val action = HousesFragmentDirections.toHouseDetailDest(house.name)
+        findNavController().navigate(action)
     }
 
 }
